@@ -1,0 +1,2 @@
+The sed utility shall conform to the Base Definitions volume of Utility Syntax Guidelines, except that the order of presentation of the -e and -f options is significant.
+
