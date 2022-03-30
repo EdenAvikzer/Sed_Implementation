@@ -1,5 +1,6 @@
 # Written by Eden Avikzer - home assignment
 
+from pathlib import Path
 # Import the argparse library
 import argparse
 # Import library that Support regular expressions (RE)
@@ -16,12 +17,20 @@ def get_arguments():
 
 
 def load_file(args):
-    # open file and read the text
-    file_to_read = open(args.file)
-    data = file_to_read.read()
-    # save the output
-    new_data = replace_strings(data, args)
-    return new_data
+    my_file = Path(args.file)
+
+    if my_file.is_file():     # file exists
+        # open file and read the text
+        file_to_read = open(args.file)
+        data = file_to_read.read()
+        # save the output
+        new_data = replace_strings(data, args)
+        return new_data
+
+    else: # it's a string
+        string = args.file
+        new_data = replace_strings(string, args)
+        return new_data
 
 
 def replace_strings(data, args):
