@@ -37,7 +37,7 @@ def replace_strings(data, args):
     substrings = args.sedFormat.split('/')
     string_to_find = substrings[1]
     replace_to = substrings[2]
-    return re.sub(string_to_find, replace_to, data)
+    return re.sub(string_to_find, replace_to, data, 1)
 
 
 file = load_file(get_arguments())
@@ -50,7 +50,8 @@ print()
  input.txt : The sed utility shall conform to the Base Definitions volume of Utility Syntax Guidelines, except that
  the order of presentation of the -e and -f options is significant.
 
- output: The sed utility shall cONform to the Base DefinitiONs volume of Utility Syntax Guidelines, except that
-  the order of presentatiON of the -e and -f optiONs is significant.
+ output: The sed utility shall cONform to the Base Definitions volume of Utility Syntax Guidelines,
+  except that the order of presentation of the -e and -f options is significant.
+
 
 '''
